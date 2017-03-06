@@ -61,12 +61,9 @@ h2{
 	color:var(--Schrift-io);
 }
 
-msg-ok{
-	background-color:red;
-}
-
 span{
-	font-size:.8em;
+	font-size:.6em;
+	margin-left:1em;
 }
 
 label, input{
@@ -92,6 +89,11 @@ p {
 
 form{
 	margin-top:1.5em;
+}
+
+button:{
+	border: 1px solid var(--akzent);
+
 }
 
 .btn-senden{
