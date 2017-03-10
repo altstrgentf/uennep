@@ -29,8 +29,7 @@
 		PRIMARY KEY(meta_id));" ;
 		
 		$pdo->exec($sql);
-		
-		
+			
 //################# Tabelle für Login-Daten erstellen ###############################
 
 		$sql ="CREATE TABLE IF NOT EXISTS ".DB_PREFIX."login (
@@ -38,12 +37,26 @@
 		login_Email VARCHAR( 50 ) NOT NULL,
 		login_Passwort VARCHAR(50) NOT NULL,
 		login_Gesperrt TINYINT(1) DEFAULT 0,
-		login_Fehlversuche TINYINT(1) DEFAULT 0,
+		login_Fehler TINYINT(1) DEFAULT 0,
+		login_temp TINYINT(1) DEFAULT 0,
+		login_aktiv TINYINT(1) DEFAULT 0,
+		login_online TINYINT(1) DEFAULT 0,
+				
 		PRIMARY KEY(login_ID));" ;
 		
 		$pdo->exec($sql);
 		
+//################# Tabelle für System-Daten erstellen #############################
 
+		$sql ="CREATE TABLE IF NOT EXISTS ".DB_PREFIX."system (
+		system_ID INT( 3 ) AUTO_INCREMENT,
+		system_Bezeichnung VARCHAR( 20 ) NOT NULL,
+		system_Wert VARCHAR(250) NOT NULL,
+		
+		PRIMARY KEY(system_ID));" ;
+		
+		$pdo->exec($sql);
+		
 //################# Datenbankverbindung schliessen #################################
 
 		$pdo=NULL;
@@ -51,4 +64,8 @@
 	}catch (PDOException $e){
 		echo $e->getMessage();
 	}
+	
+	echo '<p class="msg-ok">Datenbanken erfolgreich erstellt.</p>';
+	echo '<p><form method="get"><button type="submit" value="einstellungen.php" name="Seite" class="btn-senden">Weiter</button></form>';
+	
 ?>

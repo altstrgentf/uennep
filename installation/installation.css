@@ -47,6 +47,10 @@ h2{
 	padding:.5em;
 }
 
+sup{
+	color:var(--Schrift-warn);
+}
+
 .msg-false::after{
 	content:"\f405";
 	font-family: Ionicons;
@@ -71,16 +75,24 @@ label, input{
 }
 
 label{
-	width:15em;
+
 	display:block;
-	float:left;
+	flex:1;
 }
 
 input{
 	background-color: var(--hintergrund);
 	border: 1px solid var(--akzent);
 	color:var(--Schrift-dunkel);
-	width:15em;
+
+}
+
+div{
+	flex:2;
+}
+
+.form-tag{
+	display:flex;
 }
 
 p {
@@ -89,6 +101,7 @@ p {
 
 form{
 	margin-top:1.5em;
+	display:flex;
 }
 
 button:{
@@ -97,6 +110,7 @@ button:{
 }
 
 .btn-senden{
+	flex:none;
 	margin-left:22em;
 	background-color:var(--akzent);
 	color: var(--Schrift-akzent-hell);
@@ -105,4 +119,18 @@ button:{
 .btn-senden:hover, .btn-senden:active{
 	background-color:var(--Schrift-akzent-hell);
 	color:var(--Schrift-dunkel);
+}
+
+.left{
+	display:block;
+	flex:1;
+	width:30%;
+	flex-direction:row;
+}
+
+.right{
+	display:block;
+	flex:1;
+	flex-direction:row;
+	width:30%;
 }

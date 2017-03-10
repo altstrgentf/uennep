@@ -39,8 +39,7 @@
 /**
  * Einfügen des externen Contents ##################################################
  */		
-			if ($_GET['gesendet']=='') include $seiteContent;
-			if ($_GET['gesendet']=='ja') include $seiteContent;
+			if ($_GET['gesendet']!=='') include $seiteContent;
 				
 		?>
 	</body>
